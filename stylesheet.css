@@ -1,0 +1,18 @@
+body {
+  background-image: url("images/texture.jpg");
+}
+
+#board {
+  width: 636px;
+  margin: 0 auto;
+}
+
+.square {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border: 1px black solid;
+  margin: 2.5px 5px;
+  background-color: lightgray;
+  box-shadow: 2px 2px 2px;
+}
