@@ -1,19 +1,44 @@
-var board = document.getElementById("board");
+$(document).ready(function(){
 
-for (i=0; i<9; i++) {
-  var div = document.createElement("div");
-  board.appendChild(div);
-  div.className = "square";
-  div.id = i+1;
-}
+  var board = $("#board");
+  var squares = $(".square");
 
-var Player = function(firstName, lastName){
-};
+  function Player(name) {
+    this.name = name;
+  }
 
-var playerOne = new Player();
-var playerTwo = new Player();
+  $("#rules").on("click", "button", function(){
+      newPlayerName();
+      $(this).parent().hide();
+      createBoard();
+  });
 
-playerOne.firstName = prompt("Player One, what is your name?");
-playerTwo.firstName = prompt("Player Two, what is your name?");
+  function newPlayerName(){
+    var name = prompt("Please enter your name");
+    // while (isNaN(name) === false || name === undefined) {
+    //   name = prompt("Please enter your name");
+    // }
+    var playerOne = new Player(name);
+    console.log(playerOne.name);
+  }
 
-alert("Welcome " + playerOne.firstName + " and " + playerTwo.firstName + "!");
+  function createBoard(){
+    for (i = 0; i < 3; i++) {
+      $('<div class="col-xs-4 text-center square"></div>').appendTo('#row1');
+      $('<div class="col-xs-4 text-center square"></div>').appendTo('#row2');
+      $('<div class="col-xs-4 text-center square"></div>').appendTo('#row3');
+    }
+    $("#row1").addClass("row-border");
+    $("#row2").addClass("row-border");
+  }
+
+
+  // var takeTurn = function(square){
+  //   square.className = square.className + " clicked";
+  // };
+  //
+  // for (i=0; i<squares.length; i++) {
+  //   var square = squares[i];
+  //   square.onclick = "takeTurn(square)";
+  // }
+});

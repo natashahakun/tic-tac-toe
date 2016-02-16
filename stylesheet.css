@@ -2,17 +2,27 @@ body {
   background-image: url("images/texture.jpg");
 }
 
+#rules {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
 #board {
-  width: 636px;
+  width: 75%;
   margin: 0 auto;
+  margin-top: 5%;
 }
 
 .square {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  border: 1px black solid;
-  margin: 2.5px 5px;
+  height: 150px;
   background-color: lightgray;
-  box-shadow: 2px 2px 2px;
+}
+
+.row-border {
+  border-bottom: 2px black solid;
+}
+
+#row1 .square:nth-of-type(3), #row2 .square:nth-of-type(2), #row3 .square:nth-of-type(2) {
+  border-right: 2px black solid;
+  border-left: 2px black solid;
 }
