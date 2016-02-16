@@ -32,6 +32,10 @@ $(document).ready(function(){
     $("#row2").addClass("row-border");
   }
 
+  $("#board").on("click", ".square", function() {
+    $(this).html("X");
+  });
+
 
   // var takeTurn = function(square){
   //   square.className = square.className + " clicked";

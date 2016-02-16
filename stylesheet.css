@@ -16,6 +16,8 @@ body {
 .square {
   height: 150px;
   background-color: lightgray;
+  padding-top: 14px;
+  font-size: 90px;
 }
 
 .row-border {
